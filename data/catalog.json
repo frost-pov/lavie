@@ -1,0 +1,589 @@
+[
+ {
+  "slug": "max-50000",
+  "name": "Max",
+  "puffs": 50000,
+  "dual": false,
+  "spec": {
+   "battery": "850mAh",
+   "liquid": "38ml",
+   "size": "54.6*28.6*106.5mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Watermelon Ice",
+   "Strawberry Watermelon",
+   "Blueberry Ice",
+   "Cherry Raspberry",
+   "Mixed Fruit",
+   "Triple Mango",
+   "Lemon Lime",
+   "Black Grape",
+   "Energy Drink",
+   "Cola",
+   "Strawberry Dragon Fruit",
+   "Kiwi Passion Fruit",
+   "Miami Mint",
+   "Double Apple"
+  ],
+  "image": "max-50000.webp",
+  "hero": "hero/max-50000.webp",
+  "heroSize": [
+   1276,
+   798
+  ]
+ },
+ {
+  "slug": "triple-80000",
+  "name": "Triple",
+  "puffs": 80000,
+  "dual": true,
+  "spec": {
+   "battery": "850mAh",
+   "liquid": "3*20ml",
+   "size": "43*43*112mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Strawberry watermelon*lemon peach*mango peach watermelon",
+   "blueberry sour raspberry*blueberry razz*raspberry watermelon",
+   "blueberry raspberry*Strawberry raspberry*cherry berry",
+   "Strawberry Banana*kiwi passion fruit*blackcurrant ice",
+   "pineapple coconut*tropical fruits*dragon fruit ice",
+   "lemon lime*pink lemonade*peach ice",
+   "Strawberry mango*Strawberry kiwi*mixed fruits",
+   "watermelon ice*triple melon*gummy bear",
+   "cherry*Banana*apple",
+   "cola*green grapes*mint"
+  ],
+  "image": "triple-80000.webp",
+  "hero": "hero/triple-80000.webp",
+  "heroSize": [
+   881,
+   1039
+  ]
+ },
+ {
+  "slug": "classic-10000",
+  "name": "Classic",
+  "puffs": 10000,
+  "dual": false,
+  "spec": {
+   "battery": "600mAh",
+   "liquid": "18ml",
+   "size": "30*110mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Mango",
+   "Pineapple ice",
+   "Watermelon ice",
+   "Cola ice",
+   "Juicy peach",
+   "Mint",
+   "Lychee",
+   "Grape ice",
+   "Strawberry ice",
+   "Passion fruit"
+  ],
+  "image": "classic-10000.webp",
+  "hero": "hero/classic-10000.webp",
+  "heroSize": [
+   883,
+   883
+  ]
+ },
+ {
+  "slug": "3d-full-screen-45000",
+  "name": "3D Full Screen",
+  "puffs": 45000,
+  "dual": false,
+  "spec": {
+   "battery": "650mAh",
+   "liquid": "28ml",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Strawberry Jam",
+   "Sour Apple  Ice",
+   "Miami Mint",
+   "Mexico Mango",
+   "Sour Mango Pineapple",
+   "Rasberry Jam",
+   "Juicy Peach Ice",
+   "Strawberry Watermelon",
+   "Peach Jam",
+   "Watermelon Ice",
+   "Blueberry Jam",
+   "Orange Jam"
+  ],
+  "image": "3d-full-screen-45000.webp",
+  "hero": "hero/3d-full-screen-45000.webp",
+  "heroSize": [
+   827,
+   1054
+  ]
+ },
+ {
+  "slug": "twins-max-70000",
+  "name": "Twins Max",
+  "puffs": 70000,
+  "dual": true,
+  "spec": {
+   "battery": "850mAh",
+   "liquid": "30+30ml",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Strawberry Watermelon&Blueberry Raspberry",
+   "Blue Razz Lemonade& Watermelon Bubblegum",
+   "Blueberry Ice & Black Dragon Ice",
+   "Triple Melon Ice & Rasperry Watermelon",
+   "Fizzy Cherry Ice& Blue Berry Cotton Candy",
+   "Strawberry Watermelon Bubblegum &Mixed Fruit",
+   "Strawberry Banana& Pineapple Cocount Ice",
+   "Red Bull Strawberry& Blackcurrant Ice",
+   "Puple Grape& Double Apple",
+   "Watermelon Ice& Lemon Lime",
+   "Red Bull Ice& Strawberry Mango",
+   "Mixed Berry& Fizzy Cherry"
+  ],
+  "image": "twins-max-70000.webp",
+  "hero": "hero/twins-max-70000.webp",
+  "heroSize": [
+   1400,
+   788
+  ]
+ },
+ {
+  "slug": "skyking-40000",
+  "name": "SKYKING",
+  "puffs": 40000,
+  "dual": false,
+  "spec": {
+   "battery": "600mAh",
+   "liquid": "45ml",
+   "size": "35*35*97mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Eed Bull",
+   "Blueberry Ice",
+   "Strawberry Kiwi",
+   "Mixed Berry",
+   "Watermelon Ice",
+   "Lemon Lime",
+   "Peah Mango Pineapple",
+   "Rasperry Watermelon",
+   "Strawberry Banana",
+   "Love 66",
+   "Pink Lemonde",
+   "Black Ice Dragonfruit Strawberry"
+  ],
+  "image": "skyking-40000.webp",
+  "hero": "hero/skyking-40000.webp",
+  "heroSize": [
+   1272,
+   795
+  ]
+ },
+ {
+  "slug": "cyber-20000",
+  "name": "Cyber",
+  "puffs": 20000,
+  "dual": true,
+  "spec": {
+   "battery": "700mAh",
+   "liquid": "20ml",
+   "size": "48*25*89mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Lemon Cola + Passion Fruit Guava",
+   "Strawberry Kiwi Ice+Melon Ice",
+   "Strawberry Watermelon+Blackberry Pome Cherry Ice",
+   "Grape Ice+Mint Ice",
+   "Bacco+ Mango Ice",
+   "Double Apple+Love 66",
+   "Lychee Ice+Watermelon Ice",
+   "Pineapple Ice+ Taro Ice",
+   "Matcha+Coffee Ice",
+   "Aloe Grape+ Blueberry Raspberry Bubblegum"
+  ],
+  "image": "cyber-20000.webp",
+  "hero": "hero/cyber-20000.webp",
+  "heroSize": [
+   791,
+   809
+  ]
+ },
+ {
+  "slug": "cube-20000",
+  "name": "Cube",
+  "puffs": 20000,
+  "dual": false,
+  "spec": {
+   "battery": "600mAh",
+   "liquid": "18ml",
+   "size": "112*40*17.5mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Strawberry kiwi ice",
+   "Aloe vera grape ice",
+   "Strawberry watermelon",
+   "Blackberry pome cherry ice",
+   "Grape ice",
+   "Mint ice",
+   "Bacco",
+   "Mango monster",
+   "Blueberry raspberry grape",
+   "Passion fruit kiwi guava",
+   "Double apple",
+   "Lemon cola",
+   "Strawberry lychee ice",
+   "Watermelon ice",
+   "Blueberry raspberry bubblegum",
+   "Taro ice cream"
+  ],
+  "image": "cube-20000.webp",
+  "hero": "hero/cube-20000.webp",
+  "heroSize": [
+   786,
+   667
+  ]
+ },
+ {
+  "slug": "cube-10000",
+  "name": "Cube",
+  "puffs": 10000,
+  "dual": false,
+  "spec": {
+   "battery": "1600mAh",
+   "liquid": "16ml",
+   "size": "112*40*17.5mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Grape ice",
+   "Watermelon Ice",
+   "Blueberry raspberry grape ice",
+   "Strawberry kiwi ice",
+   "Strawberry watermelon",
+   "Blackberry Ice",
+   "Blackberry Pome Cherry Ice",
+   "Strawberry Lychee Ice",
+   "Mint",
+   "Double apple",
+   "Bluberry Raspberry Bubblegum",
+   "Apple Grape Ice",
+   "Grape Peach Ice",
+   "Mango Monster",
+   "Aloe Vera Grape Ice"
+  ],
+  "image": "cube-10000.webp",
+  "hero": "hero/cube-10000.webp",
+  "heroSize": [
+   788,
+   902
+  ]
+ },
+ {
+  "slug": "eternal-10000",
+  "name": "Eternal",
+  "puffs": 10000,
+  "dual": false,
+  "spec": {
+   "battery": "550mAh",
+   "liquid": "18ml",
+   "size": "29.7*21.7*113.7mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Coffee",
+   "watermelon",
+   "Purple grape",
+   "Double Apple",
+   "Mint",
+   "Mango",
+   "Passion Fruit",
+   "Lemon Cola",
+   "Mojto",
+   "Yakult",
+   "Strawberry  Mango",
+   "Mixed Berries"
+  ],
+  "image": "eternal-10000.webp",
+  "hero": "hero/eternal-10000.webp",
+  "heroSize": [
+   1114,
+   788
+  ]
+ },
+ {
+  "slug": "torch-6000",
+  "name": "Torch",
+  "puffs": 6000,
+  "dual": false,
+  "spec": {
+   "battery": "550mAh",
+   "liquid": "12ml",
+   "size": "D23*109 mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Strawberry watermelon",
+   "watermelon",
+   "coffee",
+   "Purple grape",
+   "Double Apple",
+   "Mint",
+   "Mango",
+   "Passion Fruit",
+   "Lemon Cola",
+   "Mojto",
+   "Yakult",
+   "Strawberry",
+   "Litchi",
+   "Tobacco"
+  ],
+  "image": "torch-6000.webp",
+  "hero": "hero/torch-6000.webp",
+  "heroSize": [
+   809,
+   1294
+  ]
+ },
+ {
+  "slug": "xo9000-9000",
+  "name": "XO9000",
+  "puffs": 9000,
+  "dual": false,
+  "spec": {
+   "battery": "550mAh",
+   "liquid": "16ml",
+   "size": "43.5*22.3*79.8mm"
+  },
+  "flavors": [
+   "Cotton Candy",
+   "Strawberry Coco",
+   "Pineapple",
+   "Mango Ice",
+   "Peach Ice",
+   "Watermelon Ice",
+   "Mixed Berry",
+   "Grape Orange Apple",
+   "Orange Mango Guava",
+   "Blueberry ice",
+   "Coconut milk",
+   "Litchi",
+   "Melon ice",
+   "Guava ice",
+   "Purple Grape",
+   "Yakult",
+   "Greenbeans coconutmilk(GCM)",
+   "Cola ice",
+   "Double Apple",
+   "Strawberry Mango Ice"
+  ],
+  "image": "xo9000-9000.webp",
+  "hero": "hero/xo9000-9000.webp",
+  "heroSize": [
+   1400,
+   935
+  ]
+ },
+ {
+  "slug": "insider-12000",
+  "name": "INSIDER",
+  "puffs": 12000,
+  "dual": false,
+  "spec": {
+   "battery": "650mAh",
+   "liquid": "18ml",
+   "size": "88.65*50.6*27.6mm"
+  },
+  "flavors": [
+   "Watermelon ice",
+   "Mango ice",
+   "Strawberry Watermelon",
+   "Mint ice",
+   "Orange Ice",
+   "Lemon Cola",
+   "Coffee",
+   "Green Grape Ice",
+   "Mojto",
+   "Green Apple Ice",
+   "Rose Black Tea",
+   "BlueBerry Ice"
+  ],
+  "image": "insider-12000.webp",
+  "hero": "hero/insider-12000.webp",
+  "heroSize": [
+   788,
+   603
+  ]
+ },
+ {
+  "slug": "kiss-8000",
+  "name": "KISS",
+  "puffs": 8000,
+  "dual": false,
+  "spec": {
+   "battery": "400mAh",
+   "liquid": "12ml",
+   "size": "40*20*80.8mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Energy drinks",
+   "Mix the fruit",
+   "watermelon",
+   "Purple grape",
+   "Double Apple",
+   "Mint",
+   "Mango",
+   "Lemon Cola",
+   "Mojto",
+   "Yakult",
+   "Strawberry  Mango",
+   "Mixed Berries"
+  ],
+  "image": "kiss-8000.webp",
+  "hero": "hero/kiss-8000.webp",
+  "heroSize": [
+   788,
+   788
+  ]
+ },
+ {
+  "slug": "milk-2-0-12000",
+  "name": "Milk 2.0",
+  "puffs": 12000,
+  "dual": false,
+  "spec": {
+   "battery": "400mAh",
+   "liquid": "20ml",
+   "size": "37.4*32.6*73mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Strawberry mango",
+   "Watermelon ice",
+   "Guava ice",
+   "Lychee ice",
+   "Mango ice",
+   "Cola ice",
+   "Peach ice",
+   "Grape ice",
+   "Taro ice",
+   "Tamarind"
+  ],
+  "image": "milk-2-0-12000.webp",
+  "hero": "hero/milk-2-0-12000.webp",
+  "heroSize": [
+   788,
+   573
+  ]
+ },
+ {
+  "slug": "ghost-pro-5500",
+  "name": "Ghost pro",
+  "puffs": 5500,
+  "dual": false,
+  "spec": {
+   "battery": "550mAh",
+   "liquid": "12ml",
+   "size": "113*22*22mm",
+   "charging": "Type-C"
+  },
+  "flavors": [
+   "Peach Mango",
+   "Passion Kiwi Guava",
+   "Strawberry Lemonade",
+   "Blue Sour Raspberry",
+   "Watermelon Freeze",
+   "Pink Lady",
+   "Strawberry Kiwi",
+   "Great Grape",
+   "Cola ice",
+   "Fresh Mint",
+   "Black Mamba",
+   "Blueberry Raspberry Cherry"
+  ],
+  "image": "ghost-pro-5500.webp",
+  "hero": "hero/ghost-pro-5500.webp",
+  "heroSize": [
+   798,
+   1333
+  ]
+ },
+ {
+  "slug": "bar-1600",
+  "name": "Bar",
+  "puffs": 1600,
+  "dual": false,
+  "spec": {
+   "battery": "800mAh",
+   "liquid": "5.3ml",
+   "size": "106.5*19.5mm"
+  },
+  "flavors": [
+   "Cotton Candy",
+   "Strawberry Coco",
+   "Pineapple",
+   "Mango Ice",
+   "Peach Ice",
+   "Watermelon Ice",
+   "Mixed Berry",
+   "Grape Orange Apple",
+   "Orange Mango Guava",
+   "Blueberry ice",
+   "Coconut milk",
+   "Litchi",
+   "Melon ice",
+   "Guava ice",
+   "Purple Grape",
+   "Yakult",
+   "Greenbeans coconutmilk(GCM)",
+   "Cola ice",
+   "Double Apple",
+   "Strawberry Mango Ice"
+  ],
+  "image": "bar-1600.webp",
+  "hero": "hero/bar-1600.webp",
+  "heroSize": [
+   788,
+   788
+  ]
+ },
+ {
+  "slug": "bar-800",
+  "name": "Bar",
+  "puffs": 800,
+  "dual": false,
+  "spec": {
+   "battery": "450mAh",
+   "liquid": "3.2ml",
+   "size": "106*19.5mm"
+  },
+  "flavors": [
+   "Pink lemonade",
+   "Cola",
+   "Cocktail",
+   "Strawberry Watermelon",
+   "Mixed berry",
+   "Blueberry",
+   "Melon Coco",
+   "Grapce ice",
+   "Peach ice",
+   "Cool Mint"
+  ],
+  "image": "bar-800.webp",
+  "hero": "hero/bar-800.webp",
+  "heroSize": [
+   1000,
+   1000
+  ]
+ }
+]

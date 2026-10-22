@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lavie Kenya storefront
 
-## Getting Started
+Next.js site: public catalogue (only in-stock flavors shown), WhatsApp ordering, and a `/admin` page to toggle stock per flavor and set KES prices.
 
-First, run the development server:
+## Run
+    npm install
+    npm run dev        # http://localhost:3000, admin at /admin
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Config (.env.local)
+- `ADMIN_PASSWORD` : password for /admin
+- `NEXT_PUBLIC_WHATSAPP_NUMBER` : your number, digits only, with country code (e.g. 2547XXXXXXXX)
+- `SUPABASE_URL`, `SUPABASE_SERVICE_KEY` : needed in production (Vercel has no writable disk).
+  Create one table: `create table kv (key text primary key, value jsonb);`
+  Locally, stock is stored in `data/state.json`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Catalogue
+`data/catalog.json` (18 models, flavors, specs) and `public/products/*.webp` came from the supplier price list.
