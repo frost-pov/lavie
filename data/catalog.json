@@ -31,7 +31,9 @@
   "heroSize": [
    1276,
    798
-  ]
+  ],
+  "color": "#7fb2e5",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "triple-80000",
@@ -61,7 +63,9 @@
   "heroSize": [
    881,
    1039
-  ]
+  ],
+  "color": "#2f3f7a",
+  "onColor": "#ffffff"
  },
  {
   "slug": "classic-10000",
@@ -91,7 +95,9 @@
   "heroSize": [
    883,
    883
-  ]
+  ],
+  "color": "#8aa45a",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "3d-full-screen-45000",
@@ -122,7 +128,9 @@
   "heroSize": [
    827,
    1054
-  ]
+  ],
+  "color": "#17287e",
+  "onColor": "#ffffff"
  },
  {
   "slug": "twins-max-70000",
@@ -153,11 +161,13 @@
   "heroSize": [
    1400,
    788
-  ]
+  ],
+  "color": "#d2dd5b",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "skyking-40000",
-  "name": "SKYKING",
+  "name": "Skyking",
   "puffs": 40000,
   "dual": false,
   "spec": {
@@ -185,7 +195,9 @@
   "heroSize": [
    1272,
    795
-  ]
+  ],
+  "color": "#2a4aa8",
+  "onColor": "#ffffff"
  },
  {
   "slug": "cyber-20000",
@@ -215,7 +227,9 @@
   "heroSize": [
    791,
    809
-  ]
+  ],
+  "color": "#6b67c6",
+  "onColor": "#ffffff"
  },
  {
   "slug": "cube-20000",
@@ -251,7 +265,9 @@
   "heroSize": [
    786,
    667
-  ]
+  ],
+  "color": "#8ed14b",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "cube-10000",
@@ -286,7 +302,9 @@
   "heroSize": [
    788,
    902
-  ]
+  ],
+  "color": "#4f7ba3",
+  "onColor": "#ffffff"
  },
  {
   "slug": "eternal-10000",
@@ -318,7 +336,9 @@
   "heroSize": [
    1114,
    788
-  ]
+  ],
+  "color": "#290a6e",
+  "onColor": "#ffffff"
  },
  {
   "slug": "torch-6000",
@@ -352,7 +372,9 @@
   "heroSize": [
    809,
    1294
-  ]
+  ],
+  "color": "#ff7a3d",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "xo9000-9000",
@@ -391,11 +413,13 @@
   "heroSize": [
    1400,
    935
-  ]
+  ],
+  "color": "#ca4a47",
+  "onColor": "#ffffff"
  },
  {
   "slug": "insider-12000",
-  "name": "INSIDER",
+  "name": "Insider",
   "puffs": 12000,
   "dual": false,
   "spec": {
@@ -422,11 +446,13 @@
   "heroSize": [
    788,
    603
-  ]
+  ],
+  "color": "#ebce7b",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "kiss-8000",
-  "name": "KISS",
+  "name": "Kiss",
   "puffs": 8000,
   "dual": false,
   "spec": {
@@ -454,7 +480,9 @@
   "heroSize": [
    788,
    788
-  ]
+  ],
+  "color": "#96b360",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "milk-2-0-12000",
@@ -484,11 +512,13 @@
   "heroSize": [
    788,
    573
-  ]
+  ],
+  "color": "#8fd3e0",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "ghost-pro-5500",
-  "name": "Ghost pro",
+  "name": "Ghost Pro",
   "puffs": 5500,
   "dual": false,
   "spec": {
@@ -516,7 +546,9 @@
   "heroSize": [
    798,
    1333
-  ]
+  ],
+  "color": "#f2a07b",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "bar-1600",
@@ -555,7 +587,9 @@
   "heroSize": [
    788,
    788
-  ]
+  ],
+  "color": "#77bdd8",
+  "onColor": "#0c0c0e"
  },
  {
   "slug": "bar-800",
@@ -584,6 +618,8 @@
   "heroSize": [
    1000,
    1000
-  ]
+  ],
+  "color": "#ce5a50",
+  "onColor": "#ffffff"
  }
 ]

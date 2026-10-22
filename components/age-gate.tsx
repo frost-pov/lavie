@@ -32,8 +32,8 @@ export function AgeGate() {
       className="fixed inset-0 z-[100] grid place-items-center bg-canvas/95 px-6 backdrop-blur-md"
     >
       <div className="w-full max-w-md">
-        <p className="font-display text-6xl font-extrabold leading-[0.95] tracking-tight">18+</p>
-        <h2 id="age-title" className="mt-4 font-display text-3xl font-bold tracking-tight">
+        <p className="cond uppercase text-6xl font-extrabold leading-[0.95] tracking-tight">18+</p>
+        <h2 id="age-title" className="mt-4 cond uppercase text-3xl font-bold tracking-tight">
           Adults only.
         </h2>
         <p className="mt-3 text-ink-soft">
@@ -47,13 +47,13 @@ export function AgeGate() {
               } catch {}
               setShow(false);
             }}
-            className="h-12 rounded-full bg-ink px-8 font-medium text-canvas transition active:scale-[0.98]"
+            className="h-12  bg-ink px-8 font-medium text-canvas transition active:scale-[0.98]"
           >
             I am 18 or older
           </button>
           <a
             href="https://www.google.com"
-            className="grid h-12 place-items-center rounded-full border border-hairline px-8 font-medium transition hover:bg-surface"
+            className="grid h-12 place-items-center  border border-hairline px-8 font-medium transition hover:bg-surface"
           >
             Leave
           </a>

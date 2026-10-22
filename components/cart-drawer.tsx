@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 import { Minus, Plus, WhatsappLogo, X } from "@phosphor-icons/react";
 import { useCart } from "./cart";
+import { showFlavor } from "@/lib/flavors";
 
 export const kes = (n: number) => `KES ${n.toLocaleString("en-KE")}`;
 
@@ -14,7 +15,7 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
   const message = () => {
     const rows = lines.map(
       (l) =>
-        `- ${l.qty} x ${l.name}${l.puffs ? ` ${l.puffs}` : ""} (${l.flavor})${
+        `- ${l.qty} x ${l.name}${l.puffs ? ` ${l.puffs}` : ""} (${showFlavor(l.flavor)})${
           l.price != null ? ` @ ${kes(l.price)}` : ""
         }`,
     );
@@ -45,11 +46,11 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
             transition={{ type: "spring", stiffness: 380, damping: 40 }}
           >
             <div className="flex h-16 items-center justify-between border-b border-hairline px-5">
-              <h2 className="font-display text-xl font-bold">Your order</h2>
+              <h2 className="cond uppercase text-xl font-bold">Your order</h2>
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="grid h-10 w-10 place-items-center rounded-full hover:bg-surface"
+                className="grid h-10 w-10 place-items-center  hover:bg-surface"
               >
                 <X size={20} />
               </button>
@@ -58,7 +59,7 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
             {lines.length === 0 ? (
               <div className="grid flex-1 place-items-center px-8 text-center">
                 <div>
-                  <p className="font-display text-2xl font-bold">Nothing here yet.</p>
+                  <p className="cond uppercase text-2xl font-bold">Nothing here yet.</p>
                   <p className="mt-2 text-ink-soft">Pick a flavor and add it to your order.</p>
                 </div>
               </div>
@@ -71,16 +72,16 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
                         <p className="truncate font-medium">
                           {l.name} {l.puffs ?? ""}
                         </p>
-                        <p className="truncate text-sm text-ink-soft">{l.flavor}</p>
+                        <p className="text-sm text-ink-soft">{showFlavor(l.flavor)}</p>
                         <p className="mt-1 text-sm">
                           {l.price != null ? kes(l.price * l.qty) : "Price on WhatsApp"}
                         </p>
                       </div>
-                      <div className="flex items-center gap-1 rounded-full border border-hairline">
+                      <div className="flex items-center gap-1  border border-hairline">
                         <button
                           aria-label="Decrease"
                           onClick={() => setQty(l.slug, l.flavor, l.qty - 1)}
-                          className="grid h-9 w-9 place-items-center rounded-full hover:bg-surface"
+                          className="grid h-9 w-9 place-items-center  hover:bg-surface"
                         >
                           <Minus size={14} />
                         </button>
@@ -88,7 +89,7 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
                         <button
                           aria-label="Increase"
                           onClick={() => setQty(l.slug, l.flavor, l.qty + 1)}
-                          className="grid h-9 w-9 place-items-center rounded-full hover:bg-surface"
+                          className="grid h-9 w-9 place-items-center  hover:bg-surface"
                         >
                           <Plus size={14} />
                         </button>
@@ -100,14 +101,14 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
                   {priced && (
                     <div className="mb-4 flex items-baseline justify-between">
                       <span className="text-ink-soft">Total</span>
-                      <span className="font-display text-2xl font-bold">{kes(total)}</span>
+                      <span className="cond uppercase text-2xl font-bold">{kes(total)}</span>
                     </div>
                   )}
                   <a
                     href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(message())}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-14 w-full items-center justify-center gap-2 rounded-full bg-ink font-medium text-canvas transition active:scale-[0.98]"
+                    className="flex h-14 w-full items-center justify-center gap-2  bg-ink font-medium text-canvas transition active:scale-[0.98]"
                   >
                     <WhatsappLogo size={22} weight="fill" />
                     Order on WhatsApp
