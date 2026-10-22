@@ -19,10 +19,14 @@ const sbUrl = process.env.SUPABASE_URL;
 const sbKey = process.env.SUPABASE_SERVICE_KEY;
 const useSupabase = Boolean(sbUrl && sbKey);
 
+// Legacy service_role keys are JWTs and go in both headers; new sb_secret_ keys go in apikey only.
+const sbHeaders = (): Record<string, string> =>
+  sbKey!.startsWith("sb_") ? { apikey: sbKey! } : { apikey: sbKey!, Authorization: `Bearer ${sbKey}` };
+
 export async function readState(): Promise<StoreState> {
   if (useSupabase) {
     const res = await fetch(`${sbUrl}/rest/v1/kv?key=eq.${KEY}&select=value`, {
-      headers: { apikey: sbKey!, Authorization: `Bearer ${sbKey}` },
+      headers: sbHeaders(),
       cache: "no-store",
     });
     if (res.ok) {
@@ -44,8 +48,7 @@ export async function writeState(state: StoreState): Promise<void> {
     const res = await fetch(`${sbUrl}/rest/v1/kv?on_conflict=key`, {
       method: "POST",
       headers: {
-        apikey: sbKey!,
-        Authorization: `Bearer ${sbKey}`,
+        ...sbHeaders(),
         "Content-Type": "application/json",
         Prefer: "resolution=merge-duplicates",
       },
