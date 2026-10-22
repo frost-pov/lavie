@@ -5,7 +5,7 @@ import { BagSimple } from "@phosphor-icons/react";
 import { useCart } from "./cart";
 import { CartDrawer } from "./cart-drawer";
 
-export function SiteHeader() {
+export function SiteHeader({ whatsapp }: { whatsapp: string }) {
   const { count, setOpen } = useCart();
   return (
     <>
@@ -28,7 +28,7 @@ export function SiteHeader() {
           </button>
         </div>
       </header>
-      <CartDrawer />
+      <CartDrawer whatsapp={whatsapp} />
     </>
   );
 }

@@ -5,6 +5,9 @@ import { CartProvider } from "@/components/cart";
 import { AgeGate } from "@/components/age-gate";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { whatsappNumber } from "@/lib/config";
+
+export const dynamic = "force-dynamic";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -30,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-dvh flex flex-col">
         <CartProvider>
           <AgeGate />
-          <SiteHeader />
+          <SiteHeader whatsapp={whatsappNumber()} />
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </CartProvider>

@@ -32,6 +32,8 @@ export async function readState(): Promise<StoreState> {
     if (res.ok) {
       const rows = (await res.json()) as { value: StoreState }[];
       if (rows[0]?.value) return rows[0].value;
+    } else {
+      console.error("Supabase read failed", res.status, await res.text().catch(() => ""));
     }
     return empty();
   }
@@ -54,9 +56,34 @@ export async function writeState(state: StoreState): Promise<void> {
       },
       body: JSON.stringify({ key: KEY, value: next }),
     });
-    if (!res.ok) throw new Error(`Supabase write failed: ${res.status}`);
+    if (!res.ok) {
+      const body = (await res.text().catch(() => "")).slice(0, 200);
+      throw new Error(`Supabase write failed (${res.status}) ${body}`);
+    }
     return;
   }
   await fs.mkdir(path.dirname(FILE), { recursive: true });
   await fs.writeFile(FILE, JSON.stringify(next, null, 2));
+}
+
+export type StorageStatus = { ok: boolean; mode: "supabase" | "file"; detail: string };
+
+/** Admin-only diagnostics: can this deployment actually reach its database? */
+export async function getStorageStatus(): Promise<StorageStatus> {
+  if (!useSupabase) {
+    const hint = [!sbUrl && "SUPABASE_URL", !sbKey && "SUPABASE_SERVICE_KEY"].filter(Boolean).join(" and ");
+    return {
+      ok: false,
+      mode: "file",
+      detail: `${hint || "Supabase settings"} not set on this deployment. Changes cannot be saved here.`,
+    };
+  }
+  try {
+    const res = await fetch(`${sbUrl}/rest/v1/kv?select=key&limit=1`, { headers: sbHeaders(), cache: "no-store" });
+    if (res.ok) return { ok: true, mode: "supabase", detail: "Connected to Supabase." };
+    const body = (await res.text().catch(() => "")).slice(0, 160);
+    return { ok: false, mode: "supabase", detail: `Supabase answered ${res.status}. ${body}` };
+  } catch (e) {
+    return { ok: false, mode: "supabase", detail: `Could not reach Supabase: ${(e as Error).message}` };
+  }
 }

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { CaretDown } from "@phosphor-icons/react";
 import type { CatalogProduct } from "@/lib/catalog";
-import type { ProductState } from "@/lib/store";
+import type { ProductState, StorageStatus } from "@/lib/store";
 
 type Products = Record<string, ProductState>;
 
@@ -14,7 +14,17 @@ const blank = (p: CatalogProduct): ProductState => ({
   flavors: Object.fromEntries(p.flavors.map((f) => [f, false])),
 });
 
-export function AdminClient({ catalog, initial }: { catalog: CatalogProduct[]; initial: Products }) {
+export function AdminClient({
+  catalog,
+  initial,
+  storage,
+  whatsapp,
+}: {
+  catalog: CatalogProduct[];
+  initial: Products;
+  storage: StorageStatus;
+  whatsapp: string | null;
+}) {
   const router = useRouter();
   const [data, setData] = useState<Products>(() =>
     Object.fromEntries(
@@ -29,6 +39,7 @@ export function AdminClient({ catalog, initial }: { catalog: CatalogProduct[]; i
   const [onlyStocked, setOnlyStocked] = useState(false);
   const [openSlug, setOpenSlug] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "saving" | "ok" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const dirty = JSON.stringify(data) !== saved;
   const stockedCount = (slug: string) => Object.values(data[slug].flavors).filter(Boolean).length;
@@ -60,6 +71,8 @@ export function AdminClient({ catalog, initial }: { catalog: CatalogProduct[]; i
       setStatus("ok");
       setTimeout(() => setStatus("idle"), 1800);
     } else {
+      const body = (await res.json().catch(() => ({}))) as { error?: string };
+      setErrorMsg(body.error ?? `HTTP ${res.status}`);
       setStatus("error");
     }
   }
@@ -81,6 +94,19 @@ export function AdminClient({ catalog, initial }: { catalog: CatalogProduct[]; i
         <button onClick={logout} className="text-sm text-ink-soft underline">
           Sign out
         </button>
+      </div>
+
+      <div
+        className={`mt-5 rounded-xl p-3 text-sm ${storage.ok ? "bg-surface text-ink-soft" : "bg-danger/10 text-danger"}`}
+        role="status"
+      >
+        <p>
+          <strong>Storage:</strong> {storage.detail}
+        </p>
+        <p className="mt-1">
+          <strong>WhatsApp number:</strong>{" "}
+          {whatsapp ? `set (ends ${whatsapp})` : "not set, orders will go nowhere"}
+        </p>
       </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -227,7 +253,7 @@ export function AdminClient({ catalog, initial }: { catalog: CatalogProduct[]; i
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6">
           <p className="text-sm text-ink-soft" aria-live="polite">
             {status === "error"
-              ? "Save failed. Try again."
+              ? `Save failed: ${errorMsg}`
               : status === "ok"
                 ? "Saved. The site is updated."
                 : dirty

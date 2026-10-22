@@ -4,11 +4,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { Minus, Plus, WhatsappLogo, X } from "@phosphor-icons/react";
 import { useCart } from "./cart";
 
-const WA = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "254700000000";
-
 export const kes = (n: number) => `KES ${n.toLocaleString("en-KE")}`;
 
-export function CartDrawer() {
+export function CartDrawer({ whatsapp }: { whatsapp: string }) {
   const { lines, open, setOpen, setQty, clear } = useCart();
   const priced = lines.every((l) => l.price != null);
   const total = lines.reduce((s, l) => s + (l.price ?? 0) * l.qty, 0);
@@ -106,7 +104,7 @@ export function CartDrawer() {
                     </div>
                   )}
                   <a
-                    href={`https://wa.me/${WA}?text=${encodeURIComponent(message())}`}
+                    href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(message())}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex h-14 w-full items-center justify-center gap-2 rounded-full bg-ink font-medium text-canvas transition active:scale-[0.98]"

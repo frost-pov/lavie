@@ -20,7 +20,12 @@ export async function PUT(req: Request) {
     const price = typeof ps.price === "number" && ps.price > 0 ? Math.round(ps.price) : null;
     products[slug] = { price, flavors };
   }
-  await writeState({ updatedAt: "", products });
+  try {
+    await writeState({ updatedAt: "", products });
+  } catch (e) {
+    console.error(e);
+    return NextResponse.json({ error: (e as Error).message }, { status: 500 });
+  }
   revalidatePath("/", "layout");
   return NextResponse.json({ ok: true });
 }
