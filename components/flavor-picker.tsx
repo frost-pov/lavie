@@ -10,13 +10,11 @@ type Props = {
   name: string;
   puffs: number | null;
   price: number | null;
-  color: string;
-  onColor: string;
   inStock: string[];
   outOfStock: string[];
 };
 
-export function FlavorPicker({ slug, name, puffs, price, color, onColor, inStock, outOfStock }: Props) {
+export function FlavorPicker({ slug, name, puffs, price, inStock, outOfStock }: Props) {
   const { add } = useCart();
   const [flavor, setFlavor] = useState<string | null>(inStock.length === 1 ? inStock[0] : null);
   const [qty, setQty] = useState(1);
@@ -24,7 +22,7 @@ export function FlavorPicker({ slug, name, puffs, price, color, onColor, inStock
 
   return (
     <div>
-      <h2 className="text-sm font-semibold uppercase tracking-[0.12em]">
+      <h2 className="font-medium">
         Flavor <span className="ml-2 font-normal normal-case tracking-normal text-ink-soft">{flavor ? showFlavor(flavor) : `${inStock.length} available`}</span>
       </h2>
       <div className="mt-3 flex flex-wrap gap-2">
@@ -35,9 +33,8 @@ export function FlavorPicker({ slug, name, puffs, price, color, onColor, inStock
               key={f}
               onClick={() => setFlavor(f)}
               aria-pressed={on}
-              style={on ? { backgroundColor: color, color: onColor, borderColor: color } : undefined}
-              className={`min-h-11 border px-4 text-sm font-medium transition active:scale-95 ${
-                on ? "" : "border-hairline hover:border-ink"
+              className={`min-h-11 rounded-lg border px-4 text-sm font-medium transition active:scale-95 ${
+                on ? "border-ink bg-ink text-canvas" : "border-hairline hover:border-ink"
               }`}
             >
               {showFlavor(f)}
@@ -54,11 +51,11 @@ export function FlavorPicker({ slug, name, puffs, price, color, onColor, inStock
       )}
 
       <div className="mt-8 flex items-center gap-3">
-        <div className="flex items-center border border-ink">
+        <div className="flex items-center rounded-lg border border-hairline">
           <button
             aria-label="Decrease quantity"
             onClick={() => setQty((q) => Math.max(1, q - 1))}
-            className="grid h-14 w-12 place-items-center hover:bg-surface"
+            className="grid h-14 w-12 place-items-center rounded-lg hover:bg-surface"
           >
             <Minus size={16} />
           </button>
@@ -66,7 +63,7 @@ export function FlavorPicker({ slug, name, puffs, price, color, onColor, inStock
           <button
             aria-label="Increase quantity"
             onClick={() => setQty((q) => q + 1)}
-            className="grid h-14 w-12 place-items-center hover:bg-surface"
+            className="grid h-14 w-12 place-items-center rounded-lg hover:bg-surface"
           >
             <Plus size={16} />
           </button>
@@ -79,7 +76,7 @@ export function FlavorPicker({ slug, name, puffs, price, color, onColor, inStock
             setAdded(true);
             setTimeout(() => setAdded(false), 1400);
           }}
-          className="flex h-14 flex-1 items-center justify-center gap-2 bg-ink font-semibold text-canvas transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
+          className="flex h-14 flex-1 items-center justify-center gap-2 rounded-lg bg-ink font-medium text-canvas transition active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40"
         >
           {added ? (
             <>

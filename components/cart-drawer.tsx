@@ -46,7 +46,7 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
             transition={{ type: "spring", stiffness: 380, damping: 40 }}
           >
             <div className="flex h-16 items-center justify-between border-b border-hairline px-5">
-              <h2 className="cond uppercase text-xl font-bold">Your order</h2>
+              <h2 className="font-semibold text-xl font-bold">Your order</h2>
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close"
@@ -59,7 +59,7 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
             {lines.length === 0 ? (
               <div className="grid flex-1 place-items-center px-8 text-center">
                 <div>
-                  <p className="cond uppercase text-2xl font-bold">Nothing here yet.</p>
+                  <p className="font-semibold text-2xl font-bold">Nothing here yet.</p>
                   <p className="mt-2 text-ink-soft">Pick a flavor and add it to your order.</p>
                 </div>
               </div>
@@ -77,7 +77,7 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
                           {l.price != null ? kes(l.price * l.qty) : "Price on WhatsApp"}
                         </p>
                       </div>
-                      <div className="flex items-center gap-1  border border-hairline">
+                      <div className="flex items-center gap-1 rounded-lg border border-hairline">
                         <button
                           aria-label="Decrease"
                           onClick={() => setQty(l.slug, l.flavor, l.qty - 1)}
@@ -101,14 +101,14 @@ export function CartDrawer({ whatsapp }: { whatsapp: string }) {
                   {priced && (
                     <div className="mb-4 flex items-baseline justify-between">
                       <span className="text-ink-soft">Total</span>
-                      <span className="cond uppercase text-2xl font-bold">{kes(total)}</span>
+                      <span className="font-semibold text-2xl font-bold">{kes(total)}</span>
                     </div>
                   )}
                   <a
                     href={`https://wa.me/${whatsapp}?text=${encodeURIComponent(message())}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-14 w-full items-center justify-center gap-2  bg-ink font-medium text-canvas transition active:scale-[0.98]"
+                    className="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-ink font-medium text-canvas transition active:scale-[0.98]"
                   >
                     <WhatsappLogo size={22} weight="fill" />
                     Order on WhatsApp

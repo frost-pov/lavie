@@ -34,8 +34,7 @@
   --color-danger: var(--danger);
   --color-panel: var(--panel);
   --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-display);
-  --font-mono: var(--font-geist-mono);
+    --font-mono: var(--font-geist-mono);
 }
 
 html {
@@ -67,33 +66,3 @@ a {
   }
 }
 
-/* Editorial display type: Archivo's width axis pulled narrow and heavy. */
-.cond {
-  font-family: var(--font-display), system-ui, sans-serif;
-  font-stretch: 66%;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.outline-text {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--ink);
-}
-
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 60s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
