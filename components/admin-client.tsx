@@ -37,7 +37,13 @@ export function AdminClient({
   const [saved, setSaved] = useState(() => JSON.stringify(data));
   const [q, setQ] = useState("");
   const [onlyStocked, setOnlyStocked] = useState(false);
-  const [openSlug, setOpenSlug] = useState<string | null>(null);
+  const [openSlugs, setOpenSlugs] = useState<Set<string>>(() => new Set());
+  const toggleOpen = (slug: string) =>
+    setOpenSlugs((prev) => {
+      const next = new Set(prev);
+      if (!next.delete(slug)) next.add(slug);
+      return next;
+    });
   const [status, setStatus] = useState<"idle" | "saving" | "ok" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -132,11 +138,11 @@ export function AdminClient({
         {list.map((p) => {
           const s = data[p.slug];
           const n = stockedCount(p.slug);
-          const open = openSlug === p.slug;
+          const open = openSlugs.has(p.slug);
           return (
             <li key={p.slug} className="overflow-hidden rounded-2xl border border-hairline">
               <button
-                onClick={() => setOpenSlug(open ? null : p.slug)}
+                onClick={() => toggleOpen(p.slug)}
                 aria-expanded={open}
                 className="flex w-full items-center gap-4 p-3 text-left hover:bg-surface"
               >
