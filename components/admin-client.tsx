@@ -89,7 +89,7 @@ export function AdminClient({
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 pb-32 pt-8 sm:px-6">
+    <div className="mx-auto max-w-3xl px-4 pt-8 sm:px-6">
       <div className="flex items-end justify-between gap-4">
         <div>
           <h1 className="font-display text-3xl font-extrabold tracking-tight">Stock</h1>
@@ -255,8 +255,8 @@ export function AdminClient({
         })}
       </ul>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-hairline bg-canvas/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6">
+      <div className="sticky bottom-0 z-40 mt-8 -mx-4 border-t border-hairline bg-canvas/90 backdrop-blur-md sm:-mx-6">
+        <div className="flex items-center justify-between gap-4 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6">
           <p className="text-sm text-ink-soft" aria-live="polite">
             {status === "error"
               ? `Save failed: ${errorMsg}`
